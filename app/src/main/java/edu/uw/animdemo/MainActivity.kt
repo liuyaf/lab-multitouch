@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.MotionEvent
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,11 +66,15 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
             MotionEvent.ACTION_MOVE //move finger
-            ->
-                //Log.v(TAG, "finger move");
-                //                view.ball.cx = x;
-                //                view.ball.cy = y;
+            -> {
+                Toast.makeText(this,"finger down", Toast.LENGTH_SHORT).show()
                 return true
+            }
+
+//                Log.v(TAG, "finger move");
+//                                view.ball.cx = x;
+//                                view.ball.cy = y;
+
             MotionEvent.ACTION_UP //lift finger up
                 , MotionEvent.ACTION_CANCEL //aborted gesture
                 , MotionEvent.ACTION_OUTSIDE //outside bounds
